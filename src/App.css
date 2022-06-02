@@ -7,6 +7,10 @@
   pointer-events: none;
 }
 
+.theWholeWebStyle {
+  max-width: 80vw;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
