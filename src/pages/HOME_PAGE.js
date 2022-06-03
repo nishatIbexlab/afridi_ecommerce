@@ -3,6 +3,7 @@ import CustomProduct from "../components/custom_product";
 import CustomHeader from "../components/custom_header";
 import CustomBanner from "../components/custom_banner";
 import axios from "axios";
+import "../App.css";
 
 function HomePage() {
   const [data, setData] = useState([]);
@@ -15,15 +16,28 @@ function HomePage() {
     fetchData();
   }, []);
 
-  data.map((value) => console.log(value.title));
-
   return (
-    <div style={{ backgroundColor: "#fafafa" }}>
+    <div
+      style={{
+        backgroundColor: "#fafafa",
+        maxWidth: "70%",
+        margin: "auto",
+      }}
+    >
       <div style={{ height: "5vh" }}>
         <CustomHeader />
       </div>
       <CustomBanner />
-      {<CustomProduct props={"Hllo"} />}
+      <div style={{ height: "50px" }}></div>
+      <div className="allProdContainerGrid">
+        {data.map((value) => (
+          <CustomProduct
+            title={value.title}
+            description={value.description}
+            imageSrc="https://picsum.photos/200"
+          />
+        ))}
+      </div>
     </div>
   );
 }
