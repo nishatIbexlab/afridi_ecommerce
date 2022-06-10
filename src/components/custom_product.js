@@ -1,5 +1,5 @@
 import { Card, Button } from "react-bootstrap";
-function CustomProduct({ title, description, imageSrc }) {
+function CustomProduct({ title, description, imageSrc, onClick }) {
   return (
     <div>
       <div>
@@ -13,7 +13,9 @@ function CustomProduct({ title, description, imageSrc }) {
             />
             <Card.Title>Card {title}</Card.Title>
             <Card.Text>{description}</Card.Text>
-            <Button variant="primary">See details</Button>
+            <button variant="primary" onClick={onClick}>
+              See details
+            </button>
           </Card.Body>
         </Card>
       </div>
